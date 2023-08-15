@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+    
+  
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo "Fetch the source code from the directory path specified by the environment variable: ${env.SOURCE_DIR}"
+                echo "Compile the code and generate any necessary artifacts"
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo "Unit tests"
+                echo "Integration tests"
+            }
+        }
+        
+        stage('Code Quality Check') {
+            steps {
+                echo "Check the quality of the code"
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo ""Deploy the application to a testing environment specified by the environment variable: ${env.TESTING_ENV}"
+            }
+        }
+        
+        stage('Approval') {
+            steps {
+                sleep 10
+            }
+        }
+        
+        stage('Deploy to Production') {
+            steps {
+                echo "Deploying code to production environment: ${env.PROD_ENV}"
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo "Pipeline executed successfully"
+        }
+        failure {
+            echo "Pipeline execution failed"
+        }
+    }
+}
