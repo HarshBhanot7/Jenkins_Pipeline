@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     environment {
-        DIRECTORY_PATH = "/path/to/code"
-        TESTING_ENVIRONMENT = "testing"
+        DIRECTORY_PATH = "C:/Users/harsh bhanot/OneDrive/Desktop/JENKINS"
+        TESTING_ENVIRONMENT = "vscode"
         PRODUCTION_ENVIRONMENT = "HarshBhanot_223770111"
     }
     
