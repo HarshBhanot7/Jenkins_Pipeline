@@ -1,7 +1,11 @@
 pipeline {
     agent any
     
-  
+    environment {
+        DIRECTORY_PATH = "/path/to/source"
+        TESTING_ENVIRONMENT = "testing"
+        PRODUCTION_ENVIRONMENT = "HarshBhanot_223770111"
+    }
     
     stages {
         stage('Build') {
